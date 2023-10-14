@@ -1,17 +1,22 @@
-package com.example.restbackend;
-
 import org.junit.jupiter.api.Test;
-import org.springframework.web.bind.annotation.RestController;
-
 import static org.junit.jupiter.api.Assertions.*;
-@RestController
-class LoginPageTest {
+
+public class LoginPageTest {
+
     @Test
-    void LoginPage(){
-        LoginPage person=new LoginPage("Ramya","Ramya");
-        person.getUsername();
-        person.getPassword();
+    public void testGettersAndSetters() {
+        // Create a LoginPage object
+        LoginPage loginPage = new LoginPage("testUser", "testPassword");
+
+        // Test the getters
+        assertEquals("testUser", loginPage.getUsername());
+        assertEquals("testPassword", loginPage.getPassword());
+
+        // Test the setters
+        loginPage.setUsername("newUser");
+        loginPage.setPassword("newPassword");
+
+        assertEquals("newUser", loginPage.getUsername());
+        assertEquals("newPassword", loginPage.getPassword());
     }
-
-
 }
