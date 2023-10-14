@@ -2,22 +2,22 @@ package com.example.restbackend;
 
 public class LoginPage {
 
-    String username;
+    String userName;
 
     String password;
 
 
-    public LoginPage(String username, String password) {
-        this.username = username;
+    public LoginPage(String userName, String password) {
+        this.userName = userName;
         this.password = password;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -28,3 +28,4 @@ public class LoginPage {
         this.password = password;
     }
 }
+
