@@ -1,4 +1,4 @@
-package com.example.restbackend;
+package model;
 
 public class HealthCompanionApp {
     String EarlySymptomDetection;

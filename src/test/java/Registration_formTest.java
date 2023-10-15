@@ -1,6 +1,7 @@
-package com.example.restbackend;
 
+import model.Registration_form;
 import org.junit.jupiter.api.Test;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -9,6 +10,8 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 @RestController
 class Registration_formTest {
+
+    
 
     @Test
     public void testGettersAndSetters() {
