@@ -3,6 +3,9 @@ package com.example.restbackend;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 @RestController
 class Registration_formTest {
@@ -10,47 +13,44 @@ class Registration_formTest {
     @Test
     public void testGettersAndSetters() {
         // Create a Registration_form object
-        Registration_form registration = new Registration_form(
-                1L, "John",
-                "Doe",
-                "johndoe@example.com",
-                30,
-                "Male",
-                175.0,
-                70,
-                1234567890L
-        );
+        List<Registration_form> registrationList = new ArrayList<>();
 
-        // Test the getters
-        assertEquals(1L, registration.getId());
-        assertEquals("John", registration.getFirstName());
-        assertEquals("Doe", registration.getLastName());
-        assertEquals("johndoe@example.com", registration.getEmailId());
-        assertEquals(30, registration.getAge());
-        assertEquals("Male", registration.getGender());
-        assertEquals(175.0, registration.getHeight());
-        assertEquals(70, registration.getWeight());
-        assertEquals(1234567890L, registration.getContactNumber());
+        // Add Registration_form objects to the list
+        registrationList.add(new Registration_form(1L, "John", "Doe", "johndoe@example.com", 30, "Male", 175.0, 70, 1234567890L));
+        registrationList.add(new Registration_form(2L, "Jane", "Smith", "janesmith@example.com", 25, "Female", 160.0, 60, 9876543210L));
 
-        // Test the setters
-        registration.setId(2L);
-        registration.setFirstName("Jane");
-        registration.setLastName("Smith");
-        registration.setEmailId("janesmith@example.com");
-        registration.setAge(25);
-        registration.setGender("Female");
-        registration.setHeight(160.0);
-        registration.setWeight(60);
-        registration.setContactNumber(9876543210L);
+        Registration_form firstRegistration = registrationList.get(0);
+        Registration_form secondRegistration = registrationList.get(1);
 
-        assertEquals(2L, registration.getId());
-        assertEquals("Jane", registration.getFirstName());
-        assertEquals("Smith", registration.getLastName());
-        assertEquals("janesmith@example.com", registration.getEmailId());
-        assertEquals(25, registration.getAge());
-        assertEquals("Female", registration.getGender());
-        assertEquals(160.0, registration.getHeight());
-        assertEquals(60, registration.getWeight());
-        assertEquals(9876543210L, registration.getContactNumber());
+
+        assert(firstRegistration.getId() == 1L);
+        assert(firstRegistration.getFirstName().equals("John"));
+        assert(firstRegistration.getLastName().equals("Doe"));
+        assert(firstRegistration.getEmailId().equals("johndoe@example.com"));
+        assert(firstRegistration.getAge() == 30);
+        assert(firstRegistration.getGender().equals("Male"));
+        assert(firstRegistration.getHeight() == 175.0);
+        assert(firstRegistration.getWeight() == 70);
+        assert(firstRegistration.getContactNumber() == 1234567890L);
+
+        // Assertion to verify the correctness of the second registration
+
+        assert(secondRegistration.getId() == 2L);
+        assert(secondRegistration.getFirstName().equals("Jane"));
+        assert(secondRegistration.getLastName().equals("Smith"));
+        assert(secondRegistration.getEmailId().equals("janesmith@example.com"));
+        assert(secondRegistration.getAge() == 25);
+        assert(secondRegistration.getGender().equals("Female"));
+        assert(secondRegistration.getHeight() == 160.0);
+        assert(secondRegistration.getWeight() == 60);
+        assert(secondRegistration.getContactNumber() == 9876543210L);
+
+
+
+
+
+
+
     }
 }
+        
