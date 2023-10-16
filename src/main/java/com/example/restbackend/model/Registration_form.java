@@ -1,4 +1,4 @@
-package model;
+package com.example.restbackend.model;
 
 public class Registration_form {
 

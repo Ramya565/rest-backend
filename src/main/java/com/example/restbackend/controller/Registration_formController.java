@@ -1,6 +1,6 @@
-package controller;
+package com.example.restbackend.controller;
 
-import model.Registration_form;
+import com.example.restbackend.model.Registration_form;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,7 +8,7 @@ import java.util.List;
 @RestController
 public class Registration_formController {
 
-     @GetMapping("/membersDetails")
+     @GetMapping("/registrationList")
 
     public List<Registration_form> getAllMembers() {
 
