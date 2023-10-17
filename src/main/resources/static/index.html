@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello, World!</title>
+</head>
+<body>
+<h1>Hello, World!</h1>
+<p>This is a simple HTML page.</p>
+
+<form id="registrationForm" action="/api/registration/createMember" method="post">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br>
+
+    <label for="emailId">Email:</label>
+    <input type="email" id="emailId" name="emailId" required><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required><br>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select><br>
+
+    <label for="height">Height (cm):</label>
+    <input type="number" id="height" name="height" required><br>
+
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" name="weight" required><br>
+
+    <label for="contactNumber">Contact Number:</label>
+    <input type="text" id="contactNumber" name="contactNumber" required><br>
+
+    <button type="button" id="submitBtn">Submit</button>
+</form>
+
+<script>
+        document.getElementById('submitBtn').addEventListener('click', function () {
+            // Gather form data
+            const formData = new FormData(document.getElementById('registrationForm'));
+
+            // Convert the formData to a JSON object
+            const jsonFormData = {};
+            formData.forEach((value, key) => {
+                jsonFormData[key] = value;
+            });
+
+            // Send a POST request
+            fetch('localhost:8080/api/registration/createMember', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(jsonFormData),
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data); // You can handle the response here
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

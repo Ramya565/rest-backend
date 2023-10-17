@@ -1,4 +1,4 @@
-package com.example.restbackend.controller.repository;
+package com.example.restbackend.repository;
 
 import com.example.restbackend.model.Registration_form;
 import org.springframework.data.jpa.repository.JpaRepository;
