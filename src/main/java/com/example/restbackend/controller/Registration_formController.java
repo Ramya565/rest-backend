@@ -8,9 +8,8 @@ import java.util.List;
 @RestController
 public class Registration_formController {
 
-     @GetMapping("/registrationList")
-
-    public List<Registration_form> getAllMembers() {
+   @GetMapping("/registrationList")
+   public List<Registration_form> getAllMembers() {
 
         List<Registration_form> registrationList = List.of(
 
@@ -22,4 +21,6 @@ public class Registration_formController {
 
 
     }
+
+
 }
