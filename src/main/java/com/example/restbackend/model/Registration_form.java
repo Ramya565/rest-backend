@@ -17,7 +17,7 @@ public class Registration_form {
     private String gender;
     private Double height;
     private int weight;
-    private Long contactNumber;
+    private int contactNumber;
 
     public Registration_form(Long id,
                              String firstName,
@@ -27,7 +27,7 @@ public class Registration_form {
                              String gender,
                              Double height,
                              int weight,
-                             Long contactNumber) {
+                            int contactNumber) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -103,11 +103,11 @@ public class Registration_form {
         this.weight = weight;
     }
 
-    public Long getContactNumber() {
+    public int getContactNumber() {
         return contactNumber;
     }
 
-    public void setContactNumber(Long contactNumber) {
+    public void setContactNumber(int contactNumber) {
         this.contactNumber = contactNumber;
     }
 }
